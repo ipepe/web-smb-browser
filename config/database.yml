@@ -1,0 +1,22 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  database: <%= ENV.fetch('DB_NAME',     'webapp') %>
+  username: <%= ENV.fetch('DB_USERNAME', 'webapp')  %>
+  password: <%= ENV.fetch('DB_PASSWORD', 'webapp')  %>
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: rails-template-dev
+
+test:
+  <<: *default
+  database: rails-template-test
+
+production:
+  <<: *default
+  pool:     50
+  timeout:  5000
+  host:     localhost
+  port:     5432

@@ -1,0 +1,24 @@
+nav.navbar.navbar-inverse style="border-radius: 0px"
+  .container-fluid
+    .navbar-header
+      button.navbar-toggle.collapsed data-target="#main-navbar" data-toggle="collapse" type="button"
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand href=root_path
+        img src="/favicon.svg" style="display: inline-block; height: 25px; padding: 3px"
+        = I18n.t('application.title')
+    #main-navbar.collapse.navbar-collapse
+      ul.nav.navbar-nav
+        = li_link_to(:root_path)
+        = li_link_to(:root_path)
+        = li_link_to(:root_path)
+      ul.nav.navbar-nav.navbar-right
+        li.dropdown
+          a.dropdown-toggle aria-expanded="false" data-toggle="dropdown" href="#" role="button"
+            = t('theme')
+            span.caret
+          ul.dropdown-menu role="menu"
+            - Rails.application.theme_names.each do |theme_name|
+              = li_change_theme_to(theme_name)

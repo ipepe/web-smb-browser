@@ -1,0 +1,7 @@
+en:
+  application:
+    name: Rails Template
+    title: Rails Template
+  navigation:
+    root_path: Home
+  theme: Theme
