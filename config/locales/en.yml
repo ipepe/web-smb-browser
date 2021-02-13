@@ -1,7 +1,7 @@
 en:
   application:
-    name: Rails Template
-    title: Rails Template
+    name: SMB Browser
+    title: SMB Browser
   navigation:
     root_path: Home
   theme: Theme

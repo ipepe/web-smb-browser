@@ -1,0 +1,13 @@
+table.table.table-bordered
+  thead
+    tr
+      th Name
+      th Size
+  tbody
+    - @ls.each do |name, attributes|
+      - next if name.in?(['.', '..'])
+      tr
+        td
+          = entry_icon(attributes[:type])
+          = ls_link(name, attributes, @ls_path)
+        td = human_size(attributes[:size])
